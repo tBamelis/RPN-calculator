@@ -15,7 +15,32 @@ struct ContentView: View {
                 .foregroundStyle(.tint)
             Text("Hello, world!")
             
-
+            VStack
+            {
+                Grid
+                {
+                    GridRow
+                    {
+                        ForEach(7..<10)
+                        {
+                            i in
+                            Button(action: {addNumber(number: i)})
+                            {
+                                Text("\(i)")
+                            }.border(Color.black,).frame(width: 50,height: 50)
+                            
+                        }
+                    }
+                    
+                    GridRow
+                    {
+                        
+                    }
+                    
+                }
+                
+        
+            }
             
             ForEach(0..<10)
             {
@@ -55,6 +80,7 @@ struct ContentView: View {
         .padding()
     }
 }
+
 var calculator = [Int]()
 func addNumber(number: Int)
 {
