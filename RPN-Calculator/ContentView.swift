@@ -28,9 +28,21 @@ struct ContentView: View {
             }
             
             
-            Button(action: {print(calculator)
+            Button(action: {print(add())
+}) {
+                Text("+")
+            }
+            Button(action: {print(sub())
             }) {
-                Text("Print Last")
+                Text("-")
+            }
+            Button(action: {print(dev())
+            }) {
+                Text("/")
+            }
+            Button(action: {print(mult())
+            }) {
+                Text("X")
             }
             
             
@@ -47,6 +59,64 @@ var calculator = [Int]()
 func addNumber(number: Int)
 {
     calculator.append(number);
+}
+
+
+
+func add() ->Int?
+{
+    if(calculator.count >= 2)
+    {
+        var num1 = calculator.removeLast();
+        var num2 = calculator.removeLast();
+        return num1 + num2
+    }
+    else
+    {
+        return nil
+    }
+}
+
+func sub() ->Int?
+{
+    if(calculator.count >= 2)
+    {
+        var num1 = calculator.removeLast();
+        var num2 = calculator.removeLast();
+        return num1 - num2
+    }
+    else
+    {
+        return nil
+    }
+}
+
+func dev() ->Int?
+{
+    if(calculator.count >= 2)
+    {
+        var num1 = calculator.removeLast();
+        var num2 = calculator.removeLast();
+        return num1 / num2
+    }
+    else
+    {
+        return nil
+    }
+}
+
+func mult() ->Int?
+{
+    if(calculator.count >= 2)
+    {
+        var num1 = calculator.removeLast();
+        var num2 = calculator.removeLast();
+        return num1 * num2
+    }
+    else
+    {
+        return nil
+    }
 }
 
 #Preview {
